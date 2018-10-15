@@ -11,13 +11,20 @@ var capitalizeFirstLast = function(input) {
   return firstLastInCaps;
 };
 
-capitalizeFirstLast(userMessage);
+var reverseFirstLast = function(letterPair) {
+  var lastFirst = letterPair.slice(-1) + letterPair.slice(0,1);
 
-// var capitalize = function(userMessage) {
-//   var firstLast = userMessage.charAt(0);
-//   return firstLast;
-// }
-// var message = "gibberish";
-// console.log(message.charAt(0) + message.charAt(message.length-1));
+  console.log(lastFirst);
 
-// console.log(capitalize(userMessage));
+  return lastFirst;
+};
+
+var joinStrings = function(userMessage) {
+  var letterPair = capitalizeFirstLast(userMessage);
+
+
+  var word1 = userMessage + reverseFirstLast(letterPair);
+  console.log(word1);
+};
+
+joinStrings(userMessage);
