@@ -22,9 +22,17 @@ var reverseFirstLast = function(letterPair) {
 var joinStrings = function(userMessage) {
   var letterPair = capitalizeFirstLast(userMessage);
 
-
-  var word1 = userMessage + reverseFirstLast(letterPair);
-  console.log(word1);
+  var joinedStrings = userMessage + reverseFirstLast(letterPair);
+  console.log(joinedStrings);
+  return joinedStrings;
 };
 
-joinStrings(userMessage);
+var final = function(four) {
+  var middleLetter= four.charAt(parseInt(four.length/2));
+  
+  console.log(middleLetter + joinStrings(four));
+
+  return middleLetter;
+};
+
+final(userMessage);
