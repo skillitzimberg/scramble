@@ -12,7 +12,7 @@ var capitalizeFirstLast = function(input) {
 };
 
 var reverseFirstLast = function(letterPair) {
-  var lastFirst = letterPair.slice(-1) + letterPair.slice(0,1);
+  var lastFirst = letterPair.charAt(1) + letterPair.charAt(0);
 
   console.log(lastFirst);
 
@@ -29,7 +29,7 @@ var joinStrings = function(userMessage) {
 
 var final = function(four) {
   var middleLetter= four.charAt(parseInt(four.length/2));
-  
+
   console.log(middleLetter + joinStrings(four));
 
   return middleLetter;
