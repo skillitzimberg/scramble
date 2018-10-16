@@ -9,3 +9,7 @@ input {
 textarea {
   margin-top: 20px;
 }
+
+p#input {
+  border: 2px solid #333;
+}

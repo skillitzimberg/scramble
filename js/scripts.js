@@ -1,5 +1,6 @@
 $(function() {
-  var userMessage = prompt("Say something!");
+
+  var userMessage = prompt("Say something");
   console.log(userMessage);
 
   var capitalizeFirstLast = function(input) {
@@ -28,31 +29,30 @@ $(function() {
     return joinedStrings;
   };
 
-  // var final = function(userMessage) {
-  //   var userMessage = prompt("Say something!");
-  //   console.log(userMessage);
-  //   var middleLetter = userMessage.charAt(parseInt(userMessage.length/2));
-  //   var original = joinStrings(userMessage);
-  //   var joined = middleLetter + original;
-  //   console.log(joined);
-  //
-  //   document.getElementById("processedInput").textContent = joined;
-  //   // return joined;
-  // };
-  
-  $("#sweet").click(function() {
-    alert(userMessage);
-  });
+  var reversal = function() {
+    var string = "Hello";
+    var stringReversed = [];
+    var i;
+    for (i = 1; i < string.length+1; i++) {
+      var stringReversed += string.charAt(string.length-i);
 
-  $("#angry").click(function() {
+      console.log(stringReversed);
+  };
 
+  var final = function(userMessage) {
     var middleLetter = userMessage.charAt(parseInt(userMessage.length/2));
     var original = joinStrings(userMessage);
     var joined = middleLetter + original;
     console.log(joined);
+    return joined;
+  };
 
-    document.getElementById("processedInput").textContent = joined;
+  $("#sweet").click(function() {
+    document.getElementById("processedInput").textContent = userMessage;
+  });
 
+  $("#angry").click(function() {
+    document.getElementById("processedInput").textContent = final(userMessage);
   });
 
 });
