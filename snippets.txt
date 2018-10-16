@@ -1,0 +1,53 @@
+jQuery(document).ready(function(){
+  var userMessage = document.getElementById(userMessage).value();
+  console.log(userMessage);
+
+  var capitalizeFirstLast = function(input) {
+    var firstLast = input.charAt(0) + input.charAt(input.length-1);
+    console.log(firstLast);
+
+    var firstLastInCaps = firstLast.toUpperCase();
+    console.log(firstLastInCaps);
+
+    return firstLastInCaps;
+  };
+
+  var reverseFirstLast = function(letterPair) {
+    var lastFirst = letterPair.charAt(1) + letterPair.charAt(0);
+
+    console.log(lastFirst);
+
+    return lastFirst;
+  };
+
+  var joinStrings = function(userMessage) {
+    var letterPair = capitalizeFirstLast(userMessage);
+
+    var joinedStrings = userMessage + reverseFirstLast(letterPair);
+    console.log(joinedStrings);
+    return joinedStrings;
+  };
+
+  var final = function(four) {
+    var middleLetter= four.charAt(parseInt(four.length/2));
+
+    var joined = middleLetter + joinStrings(four);
+
+    return joined;
+  };
+
+  $("img").click(final(userMessage));
+
+});
+
+
+// var reversal = function() {
+//   var string = "Hello";
+//   // var stringReversed = null;
+//   var i;
+//   for (i = 1; i < string.length+1; i++) {
+//     var stringReversed += string.charAt(string.length-i);
+//
+//     console.log(stringReversed);
+//   }
+// };
